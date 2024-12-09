@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('imagebg1.jpg.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    color: rgb(14, 6, 6);
+}
+
+.container {
+    text-align: center;
+    padding: 20% 0;
+}
+
+h1 {
+    font-size: 2cm;
+}
+
+p{
+    font-size: 1.5em;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+.buttons {
+    padding: 20px 40px;
+    font-size: 1.2cm;
+    margin: 10px;
+    cursor: pointer;/* Semi-transparent background */
+    border: none;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgba(20, 199, 14, 0.3); /* Change background on hover */
+}

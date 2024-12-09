@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #7de050;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none; /* Remove underline from links */
+            height: 100px; /* Set a fixed height for uniformity */
+        }
+        .button-container:hover {
+            background-color: #328b17;
+        }
+        /* Center the "20kg and above" button */
+        .button-container.center {
+            grid-column: span 3; /* Make it span across all three columns */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <a href="payment.html?weight=under1kg" class="button-container">Under 1kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=1kg-2kg" class="button-container">1kg - 2kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=2kg-3kg" class="button-container">2kg - 3kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=3kg-4kg" class="button-container">3kg - 4kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=4kg-10kg" class="button-container">4kg - 10kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=10kg-20kg" class="button-container">10kg - 20kg</a>
+        </div>
+        <div>
+            <a href="payment.html?weight=20kg-and-above" class="button-container center">20kg and above</a>
+        </div>
+    </div>
+
+    <script>
+        // Example to read query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const wasteType = urlParams.get('type');
+        
+        if (wasteType) {
+            console.log(`Selected Waste Type: ${wasteType}`);
+            // You can add logic here to display specific information based on the waste type
+        }
+    </script>
+</body>
+</html>

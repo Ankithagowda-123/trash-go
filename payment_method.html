@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment Banking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Online Payment Banking</h1>
+
+            <h2>Bank Account Details</h2>
+            <label for="accountName">Account Holder Name:</label>
+            <input type="text" id="accountName" name="accountName" required>
+
+            <label for="accountNumber">Account Number:</label>
+            <input type="number" id="accountNumber" name="accountNumber" required>
+
+            <label for="ifscCode">IFSC Code:</label>
+            <input type="text" id="ifscCode" name="ifscCode" required>
+
+            <label for="amount">Amount (Rs):</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <h2>UPI Payment Method</h2>
+            <label for="upiId">UPI ID:</label>
+            <input type="text" id="upiId" name="upiId" required>
+
+            <h2>Other Payment Options</h2>
+            <label for="phonepeId">PhonePe ID:</label>
+            <input type="text" id="phonepeId" name="phonepeId">
+
+            <label for="googlePayId">Google Pay ID:</label>
+            <input type="text" id="googlePayId" name="googlePayId">
+
+            <h2>CASH DURING PICKUP</h2>
+            <label for="CASH">CASH DURING PICKUP:</label>
+            <input type="text" id="CASH" name="CASH DURING PICKUP" required>
+
+            <input type="submit" value="Make Payment" onclick="location.href='madepayment.html'">
+        </form>
+        <p class="note">Please ensure that the details entered are correct before submitting.</p>
+    </div>
+
+</body>
+</html>

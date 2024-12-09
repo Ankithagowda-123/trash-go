@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type of Waste</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add styles to make checkboxes and labels larger */
+        .multipleoptions label {
+            font-size: 30px; /* Increase font size */
+            margin-bottom: 10px; /* Space between options */
+            display: flex; /* Align checkbox and text */
+            align-items: center; /* Center vertically */
+        }
+
+        .multipleoptions input[type="checkbox"] {
+            width: 25px; /* Increase checkbox width */
+            height: 25px; /* Increase checkbox height */
+            margin-right: 10px; /* Space between checkbox and label text */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Type of Waste</h1>
+        <form action="weight.html" method="GET" class="waste-buttons">
+            <div class="select multipleoptions">
+                <label>
+                    <input type="checkbox" name="type" value="wet"> Wet Waste
+                </label><br>
+                <label>
+                    <input type="checkbox" name="type" value="dry"> Dry Waste
+                </label><br>
+                <label>
+                    <input type="checkbox" name="type" value="electric"> Electric Waste
+                </label><br>
+                <label>
+                    <input type="checkbox" name="type" value="other"> Other
+                </label><br>
+                <label>
+                    <input type="checkbox" name="type" value="medical"> Medical Waste
+                </label><br>
+                <label>
+                    <input type="checkbox" name="type" value="sanitary"> Sanitary Waste
+                </label><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

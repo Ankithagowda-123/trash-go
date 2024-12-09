@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASH GO</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the image slider */
+        .slider {
+            position: relative;
+            max-width: 900px; /* Width of the slider */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%; /* Each slide takes the full width of the slider */
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%; /* Make images responsive */
+            height: 300px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            display: block;
+        }
+
+        /* Button styles for navigation */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Details section */
+        .details {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .advantages {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #59b823;
+            border-radius: 5px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body></body>
+        <h1 style="text-align: center;">TRASH GO</h1>
+        <p style="text-align: center;">On demand waste pickup</p>
+        
+        <!-- Image slider -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image123.jpg.jpeg" alt="Image 1"></div>
+                <div class="slide"><img src="image12.jpg.jpeg" alt="Image 2"></div>
+                <div class="slide"><img src="image13.jpg.jpeg" alt="Image 3"></div>
+                <div class="slide"><img src="image14.jpg.jpeg" alt="Image 4"></div>
+                <div class="slide"><img src="image15.jpg.jpeg" alt="Image 5"></div>
+                <div class="slide"><img src="image16.jpg.jpeg" alt="Image 6"></div>
+            </div>
+            <button class="nav-button prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <!-- Details about TRASH GO -->
+        <div class="details">
+            <h2>About TRASH GO</h2>
+            <p>TRASH GO is a convenient and efficient waste pickup service that allows you to schedule pickups at your convenience. We aim to keep your environment clean and promote responsible waste disposal.</p>
+        </div>
+
+        <!-- Advantages of TRASH GO -->
+        <div class="advantages">
+            <h2>Advantages of TRASH GO</h2>
+        
+                <p>Convenient scheduling options for waste pickup.</p>
+                <p>Eco-friendly practices to promote recycling.</p>
+                <p>Reliable and timely service to ensure cleanliness.</p>
+                <p>Affordable pricing for all types of waste disposal.</p>
+                <p>Dedicated customer support for all inquiries.</p>
+        
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

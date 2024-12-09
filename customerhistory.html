@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Buttons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .button {
+            padding: 20px;
+            background-color: #2e9436;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #339919;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button class="button" onclick="location.href='Dataofcustomer.html'">Data of Customers</button>
+        <button class="button" onclick="location.href='EmployeeDetail.html'">Employee Details</button>
+        <button class="button" onclick="location.href='On-LocationTrack.html'">On-Location Track</button>
+    </div>
+
+</body>
+</html>

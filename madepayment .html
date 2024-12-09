@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Done</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .tick {
+            font-size: 100px;
+            color: green;
+            animation: tick-animation 1s ease-in-out forwards;
+        }
+
+        @keyframes tick-animation {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tick">&#10003;</div> <!-- Checkmark symbol -->
+        <div class="message">Payment is done!</div>
+    </div>
+
+    <script>
+        // Optional: You can add a timeout to redirect or perform another action after a few seconds
+        setTimeout(() => {
+            // Redirect to another page or perform another action
+            // window.location.href = 'another_page.html'; // Uncomment to redirect
+        }, 3000); // 3 seconds delay
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRASH GO</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the image slider */
+        .slider {
+            position: relative;
+            max-width: 800px; /* Increased width of the slider */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%; /* Each slide takes the full width of the slider */
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%; /* Make images responsive */
+            height: 300px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            display: block;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: block;
+            max-width: 200px; /* Set a max width for the logo */
+            margin: 20px auto; /* Center the logo */
+        }
+
+        /* Navigation buttons */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Button styles */
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            margin: 5px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #137718;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #30ca1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Image -->
+        <img src="imagelogo.jpg.jpeg" alt="Logo" class="logo">
+
+        <h1>TRASH GO</h1>
+        <p>On demand waste pickup</p>
+        
+        <!-- Image slider -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="image1.jpg.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="image2.jpg.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="image3.jpg.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="image4.jpg.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="image5.jpg.jpeg" alt="Image 5"></div>
+                <div class="slide"><img src="image6.jpg.jpg" alt="Image 6"></div>
+                <div class="slide"><img src="image7.jpg.jpeg" alt="Image 7"></div>
+            </div>
+            <button class="nav-button prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="buttons">
+            <button onclick="location.href='signup.html'">Sign Up</button>
+            <button onclick="location.href='details.html'">Details</button>
+            <button onclick="location.href='customer_care.html'">Customer Care</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+    }, 5000);
+</script>
